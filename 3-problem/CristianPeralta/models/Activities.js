@@ -7,6 +7,16 @@ const activitiesSchema = new Schema(
     member: {
         type: String,
         required: true,
+        enum: [
+          "Monkey",
+          "Zoro",
+          "Sanj",
+          "Usop",
+          "Nam",
+          "Nico Robi",
+          "Choppe",
+          "Franky",
+        ]
     },
     location: {
         latitude: {

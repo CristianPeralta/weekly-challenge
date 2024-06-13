@@ -1,14 +1,39 @@
 const { gql } = require("apollo-server");
 module.exports = gql`
+  enum Member {
+    Monkey
+    Zoro
+    Sanj
+    Usop
+    Nam
+    Nico_Robi
+    Choppe
+    Franky
+  }
+
+  type Location {
+    latitude: Float
+    longitude: Float
+  }
+
+  input LocationInput {
+    latitude: Float
+    longitude: Float
+  }
+
   type Activity {
-    member: String
-    activity: String
+    id: ID!
+    member: Member!
+    activity: String!
+    location: Location
     description: String
     imageUrl: String
   }
+
   input ActivityInput {
     member: String
     activity: String
+    location: LocationInput
     description: String
     imageUrl: String
   }
